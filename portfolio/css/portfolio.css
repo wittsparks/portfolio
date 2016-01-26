@@ -1,0 +1,317 @@
+* {margin: 0; padding: 0; outline: 0;}
+
+
+body {
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	color: #e5e5e5;
+	font-size: 12px;
+	background:#bfbfbf;
+
+	
+}
+
+
+h1, h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	margin:0 0 15px 0;
+}
+
+
+h1 {
+	font-size: 36px;
+	letter-spacing: -1px;
+	line-height: 100%;
+}
+
+
+h2 {
+	font-size: 24px;
+}
+
+h3 {
+   font-size: 18px;
+   line-height:120%;
+}
+
+p {
+	margin: 0 0 15px 0;
+}
+
+a {
+	color: #3e3e3e;
+}
+
+.clear {
+	clear: both;
+}
+.wrap {
+	width: 100%;
+	z-index: 10;
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+
+}
+
+.section {
+	width: 100%;
+	z-index: 10;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 0 20px 0;
+	height: auto;
+}
+
+.inner {
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+	min-height: 50px;
+	padding:30px 0;
+	font-size: 18px;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-weight: 300;
+}
+
+.inner:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+}
+
+
+.subMenu {
+	height: 50px;
+	z-index: 1000;
+	width: 100%;
+	background: black;
+}
+
+.subMenu .inner {
+	padding:0;
+	font-weight: 400;
+	margin: 0 auto;
+}
+
+
+.subNavBtn {
+	display: block;
+	height: 35px;
+	width: 10%;
+   min-width:55px;
+	float: left;
+	margin: 0px 0px 0 0;
+	text-decoration: none;
+	font-size: 14px;
+	padding: 15px 2% 0 2%;
+	text-align: center;
+	color: #fff;
+}
+
+.subMenu a:hover {
+	background: #aa863a;
+}
+
+.active {
+	background: #aa863a;
+}
+.end {
+	margin: 0;
+}
+
+/* SECTIONS */
+.sTop {
+	min-height: 130px;
+	background:#f0eceb;
+	color:#3d3d3d;
+	height: 300px;
+	
+}
+
+.sTop .inner img {
+   height:300px;
+   margin-right:100px;
+   float:right;
+}
+
+.s1 {
+	background:#729f98;
+	color:#fff;
+	
+}
+
+.s2 {
+	background: #283018;
+}
+.s2 a {
+	color: #fff;
+}
+
+.s3 {
+	background: #aa863a;
+}
+
+
+.s4 {
+	background: #729f98;
+}
+
+
+/* Content within sections */
+/* About */
+.about-left-col, .about-right-col {
+   float:left;
+   width:40%;
+   min-width:280px;
+   padding:0 4% 0 4%;
+}
+
+.testimonial {
+   font-family:"georgia", serif;
+   font-style:italic;
+   text-align:center;
+   margin-left:5%;
+   margin-right:5%;
+   margin-bottom:20px;
+}
+
+.attribution {
+   float:right;
+   padding-right:50px;
+}
+
+blockquote {
+   padding: 0 50px 0 50px;
+}
+
+blockquote:before, blockquote:after {
+  color: #aa863a;
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+
+blockquote:before {
+  content: open-quote;
+  margin-right: 0.1em;
+}
+
+blockquote:after {
+  content: close-quote;
+  margin-left: 0;
+  vertical-align:-0.6em;
+}
+
+/* Projects */
+.project {
+   min-width:280px;
+   width:45%;
+   height:auto;
+   float:left;
+   margin:10px 10px 10px 0px;
+   color:lightgrey;
+   text-align:center;
+   padding-top:10px;
+}
+
+
+.project img {
+/*
+  -moz-box-shadow:    3px 3px 5px 6px black;
+  -webkit-box-shadow: 3px 3px 5px 6px black;
+  box-shadow:         3px 3px 5px 6px black;
+*/
+  margin-bottom:10px;
+}
+
+.project a {
+   color:lightgrey;
+   line-height:1em;
+}
+
+.project p {
+   font-size:14px;
+}
+
+
+/* After Hours */
+.s3 img {
+   width:13%;
+   max-width:128px;
+   min-width:32px;
+   margin-right:10%;
+}
+
+/* Contact */
+input, textarea {
+   line-height:48px;
+   font-size:26px;
+}
+
+fieldset {
+   border:none;
+}
+
+fieldset > input, fieldset > textarea {
+    background-color: #9EBDB8;
+    border: medium none;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 1em;
+    padding: 0 1em;
+}
+
+input[type="email"], input[type="text"] {
+    width: 40%;
+    float:none;
+    height:50px;
+    margin:0 10px 10px 0;
+}
+
+textarea {
+   width:86%;
+	font-family: inherit;
+}
+
+label {
+   display:none;
+}
+
+#errorContainer {
+   display:none;
+}
+
+@media screen and (max-width: 700px) {
+   .project {
+      margin-left:0px;
+      width:100%;
+   }
+
+   .sTop {
+      height: 130px;
+   }
+
+   .sTop .inner img {
+      display:none;
+   }
+
+   .inner {
+      padding: 10px 0 0 5px;
+      margin:0;
+   }
+   
+   .about-left-col, .about-right-col {
+      padding: 0 0 0 5px;
+   }
+   input[type="email"], input[type="text"] {
+       width: 85%;
+       float:none;
+       height:50px;
+       margin:0 5px 10px 0;
+   }
+
+   textarea {
+      width:85%;
+   }
+}
