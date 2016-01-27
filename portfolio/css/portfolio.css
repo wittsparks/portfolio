@@ -348,6 +348,11 @@ label {
    padding-right:3%;
 }
 
+#form-result-div {
+   display:inline;
+   margin-left:10px;
+}
+
 /* for phones... */
 @media screen and (max-width: 700px) {
 
@@ -385,7 +390,8 @@ label {
    }
 
    .attribution {
-      font-size:60%;
+      font-size:80%;
+      padding:0;
    }
 
    .inner {
@@ -410,5 +416,12 @@ label {
    .social-icons {
       clear:both;
       float:left;
+   }
+
+   #form-result-div {
+      clear:both;
+      font-size:80%;
+      margin-bottom:10px;
+      display:block;
    }
 }

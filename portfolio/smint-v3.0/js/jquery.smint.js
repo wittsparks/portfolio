@@ -56,8 +56,8 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 			
 			//Fill the menu
 			optionLocs.push(Array(
-				$(mySelector+"."+id).position().top-menuHeight-250, 
-				$(mySelector+"."+id).height()+$(mySelector+"."+id).position().top-250, id)
+				$(mySelector+"."+id).position().top-menuHeight-330, 
+				$(mySelector+"."+id).height()+$(mySelector+"."+id).position().top-330, id)
 			);
 
 			///////////////////////////////////
@@ -125,10 +125,10 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 				// Check if at bottom of page, if so, add class to last <a> as sometimes the last div
 				// isnt long enough to scroll to the top of the page and trigger the active state.
 
-				if($(window).scrollTop() + $(window).height() == $(document).height()) {
+				if($(window).scrollTop() + $(window).height() >= $(document).height()-100) {
 	       			smintA.removeClass('active');
-	       			$(".smint a:not('.extLink'):last").addClass('active');
-//                  $("#s4").addClass('active');
+//	       			$(".smint a:not('.extLink'):last").addClass('active');
+                  $("#s4").addClass('active');
    				} else {
 //   					smintA.last().removeClass('active');
    				}
