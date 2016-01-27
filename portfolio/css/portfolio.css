@@ -94,6 +94,59 @@ a {
 	margin: 0 auto;
 }
 
+.myname {
+   width:150px;
+   float:left;
+   padding:15px 0 0 5px;
+   display:none;
+   font-size:120%;
+}
+
+.stack-menu-button {
+   position:absolute;
+   right:0;
+   height:35px;
+   padding:15px 10px 0 10px;
+   color:#D5BC85;
+   cursor:pointer;
+   display:none;
+   background:#aa863a;
+}
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent; 
+    border-right: 7px solid transparent; 
+    border-top: 14px solid #D5BC85;
+    margin-left:5px;
+    float:right;
+    margin-top: 2px;
+}
+
+.stack-menu {
+   width:100%;
+   clear:both;
+   display:none;
+   color:#D5BC85;
+   position:absolute;
+   top:50px;
+}
+
+.stack-menu ul {
+   background:#aa863a;
+}
+
+.stack-menu li {
+   border-bottom: 1px solid #c6a358;
+   line-height:2em;
+   padding-left:5px;
+   color: #D5BC85;
+}
+
+.stack-menu a {
+   text-decoration:none;
+}
 
 .subNavBtn {
 	display: block;
@@ -174,11 +227,13 @@ a {
    margin-left:5%;
    margin-right:5%;
    margin-bottom:20px;
+   clear:both;
 }
 
 .attribution {
    float:right;
    padding-right:50px;
+   font-size:80%;
 }
 
 blockquote {
@@ -203,6 +258,10 @@ blockquote:after {
   vertical-align:-0.6em;
 }
 
+hr {
+   margin-left:10%;
+   margin-right:10%;
+}
 /* Projects */
 .project {
    min-width:280px;
@@ -247,10 +306,12 @@ blockquote:after {
 input, textarea {
    line-height:48px;
    font-size:26px;
+   max-width:875px;
 }
 
 fieldset {
    border:none;
+   max-width:960px;
 }
 
 fieldset > input, fieldset > textarea {
@@ -263,14 +324,14 @@ fieldset > input, fieldset > textarea {
 }
 
 input[type="email"], input[type="text"] {
-    width: 40%;
+    width: 42%;
     float:none;
     height:50px;
-    margin:0 10px 10px 0;
+    margin:0 1% 1% 0;
 }
 
 textarea {
-   width:86%;
+   width:92%;
 	font-family: inherit;
 }
 
@@ -282,18 +343,49 @@ label {
    display:none;
 }
 
+.social-icons {
+   float:right;
+   padding-right:3%;
+}
+
+/* for phones... */
 @media screen and (max-width: 700px) {
+
+   /* Hide the nav buttons and expose the menu dropdown */
+   .subNavBtn {
+      display:none;
+   }
+
+   .stack-menu-button {
+      display:block;
+   }
+
+   .myname {
+      display:inline;
+   }
+
+   /* the project descriptions should take up the whole screen */
    .project {
       margin-left:0px;
       width:100%;
    }
 
+   /* Make the top region shorter */
    .sTop {
       height: 130px;
    }
 
+   /* Hide the stacked rocks picture */
    .sTop .inner img {
       display:none;
+   }
+
+   .testimonial {
+      font-size:80%;
+   }
+
+   .attribution {
+      font-size:60%;
    }
 
    .inner {
@@ -313,5 +405,10 @@ label {
 
    textarea {
       width:85%;
+   }
+
+   .social-icons {
+      clear:both;
+      float:left;
    }
 }

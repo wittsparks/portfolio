@@ -42,19 +42,42 @@ $(document).ready( function() {
 	</div>
 
 	<div class="subMenu" >
-	 	<div class="inner">
+	 	<div class="inner" style="width:100%">
+         <div class="myname">Witt Sparks</div>
 	 		<a href="#sTop" class="subNavBtn" style="display:none">Home</a> 
 	 		<a href="#s1" class="subNavBtn">About</a> 
 			<a href="#s2" class="subNavBtn">Projects</a>
 			<a href="#s3" class="subNavBtn">After Hours</a>
 			<a href="#s4" class="subNavBtn end">Contact</a>
+         <div class="stack-menu-button">
+            Menu
+            <div class="arrow-down"></div>
+         </div>
+         <div class="stack-menu">
+            <ul>
+               <a href="#s1"><li>About</li></a>
+               <a href="#s2"><li>Projects</li></a>
+               <a href="#s3"><li>After Hours</li></a>
+               <a href="#s4"><li>Contact</li></a>
+            </ul>
+         </div>
 		</div>
 	</div>
 
 	<div class="section s1">
 		<div class="inner ">
 			<h1>About</h1>
+         <div class="about-left-col">
+            <h2>Development</h2>
+            <p>As a software generalist, I love positions where I can wear many hats, from developing web user interfaces to writing Linux scripts to automate a build or deployment process. I am experienced enough to recommend designs, approaches, and tools. I'm also flexible and willing to adopt and contribute to existing processes. I enjoy the challenge of launching a new project, but I recogize that most of a developer's work involves building on the work of others, and I'm not above diving into existing code to make enhancements and fix bugs. 
+         </div>
+         <div class="about-right-col">
+            <h2>Leadership</h2>
+            <p>With four years of experience as a software project manager, I can take ownership of all aspects of getting a new or redesigned product off the ground and launched. From requirements definition through wireframes and usability testing to implementation and deployment, I enjoy managing the details and interacting with all of the involved stakeholders. I have experience with the tools and techniques involved in leading an agile development team. Most importantly, I love working with and learning from teams of great people.</p>
+         </div>
          <div class="testimonial">
+         <hr/>
+         <br/>
             <ul class="bxslider">
                <li>
                   <blockquote>
@@ -68,17 +91,20 @@ Witt is able to work across a variety of roles in a project: from developer to p
                   </blockquote>
                   <span class="attribution">- Johanna Levene - Section Manager, National Renewable Energy Laboratory</span>
                </li>
-         </ul>
-         <hr/>
-         </div>
-         <div class="about-left-col">
-            <h2>Development</h2>
-            <p>As a software generalist, I love positions where I can wear many hats, from developing web user interfaces to writing Linux scripts to automate a build or deployment process. I am experienced enough to recommend designs, approaches, and tools. I'm also flexible and willing to adopt and contribute to existing processes. I enjoy the challenge of launching a new project, but I recogize that most of a developer's work involves building on the work of others, and I'm not above diving into existing code to make enhancements and fix bugs, even if the code is in a language I've never seen before.</p>
-         </div>
-
-         <div class="about-right-col">
-            <h2>Leadership</h2>
-            <p>With three years of experience as a software project manager, I can take ownership of all aspects of getting a new or redesigned product off the ground and launched. From requirements definition through wireframes and usability testing to implementation and deployment, I enjoy managing the details and interacting with all of the involved stakeholders. I have experience with the tools and techniques involved in leading an agile development team. Most importantly, I love working with and learning from teams of great people.</p>
+               <li>
+                  <blockquote>
+Witt is one of those exceptional people. He brings vision and new ideas to the table with every project. Witt is not only a rock star developer, but also has excellent "people" skills. He communicates with all levels of management, other developers, and project team members with grace and kindness. This asset is particularly useful as a project manager, where he is able to get a team to rally behind him and finish on schedule.
+                  </blockquote>
+                  <span class="attribution">- Trish Cozart - Sr Project Leader, National Renewable 
+Energy Laboratory</span>
+               </li>
+               <li>
+                  <blockquote>
+Witt was a student in classes I taught as part of the Engineering Management masters program at CU Boulder, including Management of R &amp; D. Witt showed a strong aptitude for the subject matter, and performed well on the numerous individual assignments and team projects that were a requirement of the program.
+                  </blockquote>
+                  <span class="attribution">- Michael Usrey - Vice President, Sporian Microsystems, Inc.</span>
+               </li>
+            </ul>
          </div>
 		</div>
 	</div>
@@ -118,6 +144,19 @@ Witt is able to work across a variety of roles in a project: from developer to p
                <p style="color:gray;">PHP | PHP MVC | JavaScript | jQuery | MySQL | Linux Scripting | HTML | CSS </p> 
             </div>
 		   </div>
+
+         <div class="project">
+            <img src="images/prep.png"></img>
+            <div style="text-align:left; padding:5px;">
+               <h3><a href="http://www.afdc.energy.gov/prep/">Petroleum Reduction Planning Tool</a></h3>
+               <p><b>Role: </b>Project Manager</p>
+               <p>This tool helps fleet managers evaluate ways to reduce their petroleum consumption using a variety of methods. I was tasked with the development of this tool based on an older version of it. I was given a budget of $300,000 and led a small team in implementing the tool using PHP, JavaScript, and Oracle. I led all aspects of the project from UI design and usability testing through implementation and deployment.</p>
+               <br/>
+               <br/>
+               <p style="color:gray;">MS Project | Balsamiq | Pivotal Tracker | Agile Development</p> 
+            </div>
+		   </div>
+
 	   </div>
    </div>
 
@@ -170,9 +209,12 @@ Witt is able to work across a variety of roles in a project: from developer to p
 
                <input type="submit" name="Send" id="sendBtn" value="Send" />
                <span id="form_result" style="margin-left:10px;"></span>
+               <div class="social-icons">
+                  <a href="https://www.linkedin.com/in/witts" target="_blank"><img src="images/linkedin.png"></a>
+                  <a href="https://github.com/wittsparks" target="_blank"><img src="images/GitHub-Mark-64px.png"></a>         
+               </div>
             </fieldset>
          </form>
-         
 		</div>
 	</div>
 

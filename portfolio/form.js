@@ -1,4 +1,17 @@
 $(document).ready( function() {
+   /* Handle the menu button on mobile */
+   $(".stack-menu-button").click( function() {
+      if ( $(".stack-menu").css("display") == "none" ) 
+         $(".stack-menu").slideDown( "fast" );
+      else if ( $(".stack-menu").css("display") == "block" ) 
+         $(".stack-menu").slideUp( "fast" );
+   });
+
+   $(".stack-menu a").click( function() {
+      $(".stack-menu").slideUp( "fast" );
+   });
+
+   /* Form handling */
    $("#contactForm").submit( function(event) {
       event.preventDefault();
 
