@@ -6,8 +6,6 @@ body {
 	color: #e5e5e5;
 	font-size: 12px;
 	background:#bfbfbf;
-
-	
 }
 
 
@@ -402,6 +400,18 @@ label {
    .about-left-col, .about-right-col {
       padding: 0 0 0 5px;
    }
+
+   /* Remove the left/right slider controls for mobile and
+    * expand the testimonials to fill the screen */
+   .bx-wrapper .bx-controls-direction a {
+       display: none;
+   }
+
+   blockquote {
+      padding: 0;
+   }
+
+   /* Form adjustments */
    input[type="email"], input[type="text"] {
        width: 85%;
        float:none;

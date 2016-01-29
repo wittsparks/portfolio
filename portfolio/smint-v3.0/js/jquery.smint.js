@@ -56,8 +56,8 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 			
 			//Fill the menu
 			optionLocs.push(Array(
-				$(mySelector+"."+id).position().top-menuHeight-330, 
-				$(mySelector+"."+id).height()+$(mySelector+"."+id).position().top-330, id)
+				$(mySelector+"."+id).position().top-menuHeight, 
+				$(mySelector+"."+id).height()+$(mySelector+"."+id).position().top, id)
 			);
 
 			///////////////////////////////////
@@ -83,30 +83,7 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 					//remove the padding we added.
 					$('body').css('padding-top', '0' );	
 				}   
-
-				// Check if the position is inside then change the menu
-				// Courtesy of Ryan Clarke (@clarkieryan)
-				if(optionLocs[index][0] <= scrollTop && scrollTop <= optionLocs[index][1]){	
-					if(direction == "up"){
-						$("#"+id).addClass("active");
-                  if (  optionLocs[index+1] ) 
-						   $("#"+optionLocs[index+1][2]).removeClass("active");
-					} else if(index > 0) {
-						$("#"+id).addClass("active");
-                  if (  $("#"+optionLocs[index-1]) ) 
-						   $("#"+optionLocs[index-1][2]).removeClass("active");
-					} else if(direction == undefined){
-						$("#"+id).addClass("active");
-					}
-					$.each(optionLocs, function(i){
-						if(id != optionLocs[i][2]){
-							
-							$("#"+optionLocs[i][2]).removeClass("active");
-						}
-					});
-				}
 			};
-
 			// run functions
 			stickyMenu();
 
@@ -122,18 +99,7 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 				lastScrollTop = st;
 				stickyMenu(direction);
 
-				// Check if at bottom of page, if so, add class to last <a> as sometimes the last div
-				// isnt long enough to scroll to the top of the page and trigger the active state.
-
-				if($(window).scrollTop() + $(window).height() >= $(document).height()-100) {
-	       			smintA.removeClass('active');
-//	       			$(".smint a:not('.extLink'):last").addClass('active');
-                  $("#s4").addClass('active');
-   				} else {
-//   					smintA.last().removeClass('active');
-   				}
 			});
-
 			///////////////////////////////////////
         
         	$(this).on('click', function(e){
@@ -145,8 +111,6 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 				
 				// get the hash of the button you just clicked
 				var hash = $(this).attr('href').split('#')[1];
-
-				
 
 				var goTo =  $(mySelector+'.'+ hash).offset().top-myOffset;
 				
