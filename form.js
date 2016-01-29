@@ -1,12 +1,4 @@
 $(document).ready( function() {
-   function fix()
-   {
-       var el = this;
-       var par = el.parentNode;
-       var next = el.nextSibling;
-       par.removeChild(el);
-       setTimeout(function() {par.insertBefore(el, next);}, 0)
-   }
 
    /* Handle the menu button on mobile */
    $(".stack-menu-button").click( function() {
