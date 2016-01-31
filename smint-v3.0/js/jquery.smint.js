@@ -25,6 +25,9 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 
 		// adding a class to users div
 		$(this).addClass('smint');
+
+
+				
 		
 		//Set the variables needed
 		var optionLocs = new Array(),
@@ -34,6 +37,10 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
         	smintA = $('.smint a'),
         	myOffset = smint.height();
 
+      
+
+
+
 		if ( settings.scrollSpeed ) {
 				var scrollSpeed = settings.scrollSpeed
 			}
@@ -42,17 +49,16 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 				var mySelector = settings.mySelector
 		};
 
+
+
 		return smintA.each( function(index) {
             
 			var id = $(this).attr('href').split('#')[1];
 
-         if (!id) {
-            return;
-         }
-
 			if (!$(this).hasClass("extLink")) {
 				$(this).attr('id', id);
 			}
+
 			
 			//Fill the menu
 			optionLocs.push(Array(
@@ -66,7 +72,7 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 			var stickyTop = smint.offset().top;	
 
 			// check position and make sticky if needed
-			var stickyMenu = function(direction){
+			var stickyMenu = function(){
 
 				// current distance top
 				var scrollTop = $(window).scrollTop()+myOffset; 
@@ -83,23 +89,40 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 					//remove the padding we added.
 					$('body').css('padding-top', '0' );	
 				}   
+
+            smintA.removeClass('active');
+            var sectionLocs = [
+               $("div.s1").position().top - 5,
+               $("div.s2").position().top + myOffset - 5,
+               $("div.s3").position().top + myOffset - 5,
+               $("div.s4").position().top + myOffset - 5
+            ];
+            if ( scrollTop >= sectionLocs[0] && scrollTop <= sectionLocs[1] ) {
+               $("#s1").addClass("active");
+            }
+            if ( scrollTop >= sectionLocs[1] && scrollTop <= sectionLocs[2] ) {
+               $("#s2").addClass("active");
+            }
+            if ( scrollTop >= sectionLocs[2] && scrollTop <= sectionLocs[3] ) {
+               $("#s3").addClass("active");
+            }
+            if ( scrollTop >= sectionLocs[3] ) {
+               $("#s4").addClass("active");
+            }
+				if($(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
+               smintA.removeClass("active");
+               $("#s4").addClass("active");
+            } 
 			};
+
 			// run functions
 			stickyMenu();
 
 			// run function every time you scroll
-			$(window).scroll(function() {
-				//Get the direction of scroll
-				var st = $(this).scrollTop()+myOffset;
-				if (st > lastScrollTop) {
-				    direction = "down";
-				} else if (st < lastScrollTop ){
-				    direction = "up";
-				}
-				lastScrollTop = st;
-				stickyMenu(direction);
-
+			$(window).scroll( function() {
+				stickyMenu();
 			});
+
 			///////////////////////////////////////
         
         	$(this).on('click', function(e){
@@ -111,6 +134,8 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 				
 				// get the hash of the button you just clicked
 				var hash = $(this).attr('href').split('#')[1];
+
+				
 
 				var goTo =  $(mySelector+'.'+ hash).offset().top-myOffset;
 				
