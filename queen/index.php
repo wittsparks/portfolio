@@ -15,6 +15,12 @@
       margin-top: 100px;
       font-size: 300%;
    }
+
+   audio {
+      margin:0 auto;
+      width:100px;
+      height:100px;
+   }
 </style>
 <script>
 </script>
