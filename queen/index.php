@@ -18,8 +18,6 @@
 
    audio {
       margin:0 auto;
-      width:100px;
-      height:100px;
    }
 </style>
 <script>
