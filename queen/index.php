@@ -13,6 +13,7 @@
 
    h1 {
       margin-top: 100px;
+      font-size: 300%;
    }
 </style>
 <script>
@@ -22,7 +23,7 @@
    <h1>Queen of Calm</h1>
 
     <audio controls>
-     <source src="Queenofcalm.mp3" type="audio/mpeg">
+     <source src="Queenofcalm.m4a" type="audio/mp4">
      Your browser does not support the audio element.
     </audio>
 </body>
