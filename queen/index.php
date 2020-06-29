@@ -18,15 +18,19 @@
 
    audio {
       margin:0 auto;
+      width: 90%;
    }
 </style>
 <script>
+
+   var play_audio = function() {
+      document.getElementById('player').play();
+   }
 </script>
 </head>
 <body>
    <h1>Queen of Calm</h1>
-
-    <audio controls>
+    <audio id="player" controls>
      <source src="Queenofcalm.m4a" type="audio/mp4">
      Your browser does not support the audio element.
     </audio>
