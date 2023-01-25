@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>CKEditor</title>
+                <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+        </head>
+        <body>
+                <textarea name="editor1"></textarea>
+                <script>
+                   CKEDITOR.editorConfig = function( config ) {
+	// Define changes to default configuration here.
+	// For complete reference see:
+	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+	// The toolbar groups arrangement, optimized for two toolbar rows.
+	config.toolbarGroups = [
+    { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+		{ name: 'editing',     groups: [ 'find', 'selection' ] },
+		{ name: 'links' },
+		{ name: 'insert' },
+		{ name: 'forms' },
+		{ name: 'tools' },
+		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+		{ name: 'others' },
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+		{ name: 'colors' },
+		'/',
+		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+		{ name: 'styles' },
+	];
+
+	config.extraPlugins = 'uploadimage,filemanager,imgresize,html5video,widget,widgetselection,clipboard,lineutils,strinsert,pagebreak';
+	config.filebrowserImageBrowseUrl = '/laravel-filemanager?type=Images';
+	config.filebrowserImageUploadUrl = '/laravel-filemanager/upload?type=Images&_token=' + Laravel.csrfToken;
+
+   config.disableNativeSpellChecker = false;
+   config.pasteFromWordPromptCleanup = true;
+   //config.forcePasteAsPlainText = true;
+
+	// Uncomment these for upload tab on link dialog
+	config.filebrowserBrowseUrl = '/laravel-filemanager?type=Files';
+	config.filebrowserUploadUrl = '/laravel-filemanager/upload?type=Files&_token=';
+
+	// Fix for <img> tags not displaying in editor
+	config.allowedContent = {
+	    $1: {
+	        // Use the ability to specify elements as an object.
+	        elements: CKEDITOR.dtd,
+	        attributes: true,
+	        styles: true,
+	        classes: true
+	    }
+	};
+  // config.pasteFilter = 'plain-text';
+	config.disallowedContent = 'script; *[on*]; span{font,font-family}';
+	config.extraAllowedContent = 'p(*)[*]{*};div(*)[*]{*};li(*)[*]{*};ul(*)[*]{*};htmlpageheader[name]; htmlpagefooter[name]; pagebreak';
+  config.fillEmptyBlocks = false;
+	CKEDITOR.dtd.$removeEmpty.i = 0;
+
+	config.specialChars = [
+		'&euro;', '&lsquo;', '&rsquo;', '&ldquo;', '&rdquo;', '&ndash;', '&mdash;', '&iexcl;', '&cent;', '&pound;', '&curren;', '&yen;', '&brvbar;', '&sect;',
+		'&uml;', '&copy;', '&ordf;', '&laquo;', '&not;', '&reg;', '&macr;', '&deg;', '&sup2;', '&sup3;', '&acute;', '&micro;', '&para;', '&middot;', '&cedil;',
+		'&sup1;', '&ordm;', '&raquo;', '&frac14;', '&frac12;', '&frac34;', '&iquest;', '&Agrave;', '&Aacute;', '&Acirc;', '&Atilde;', '&Auml;', '&Aring;',
+		'&AElig;', '&Ccedil;', '&Egrave;', '&Eacute;', '&Ecirc;', '&Euml;', '&Igrave;', '&Iacute;', '&Icirc;', '&Iuml;', '&ETH;', '&Ntilde;', '&Ograve;',
+		'&Oacute;', '&Ocirc;', '&Otilde;', '&Ouml;', '&times;', '&Oslash;', '&Ugrave;', '&Uacute;', '&Ucirc;', '&Uuml;', '&Yacute;', '&THORN;', '&szlig;',
+		'&agrave;', '&aacute;', '&acirc;', '&atilde;', '&auml;', '&aring;', '&aelig;', '&ccedil;', '&egrave;', '&eacute;', '&ecirc;', '&euml;', '&igrave;',
+		'&iacute;', '&icirc;', '&iuml;', '&eth;', '&ntilde;', '&ograve;', '&oacute;', '&ocirc;', '&otilde;', '&ouml;', '&divide;', '&oslash;', '&ugrave;',
+		'&uacute;', '&ucirc;', '&uuml;', '&yacute;', '&thorn;', '&yuml;', '&OElig;', '&oelig;', '&#372;', '&#374', '&#373', '&#375;', '&sbquo;', '&#8219;',
+		'&bdquo;', '&hellip;', '&trade;', '&#9658;', '&bull;', '&rarr;', '&rArr;', '&hArr;', '&diams;', '&asymp;',
+		'&Alpha;', '&Beta;', '&Gamma;', '&Delta;', '&Epsilon;', '&Zeta;', '&Eta;', '&Theta;', '&Iota;', '&Kappa;', '&Lambda;', '&Mu;', '&Nu;',
+		'&Xi;', '&Omicron;', '&Pi;', '&Rho;', '&Sigma;', '&Tau;', '&Upsilon;', '&Phi;', '&Chi;', '&Psi;', '&Omega;',
+		'&forall;', '&part;', '&exist;', '&empty;', '&nabla;', '&isin;', '&notin;', '&ni;', '&prod;', '&sum;', '&minus;', '&lowast;', '&radic;',
+		'&prop;', '&infin;', '&ang;', '&and;', '&or;', '&cap;', '&cup;', '&int;', '&there4;', '&sim;', '&cong;', '&asymp;', '&ne;', '&equiv;',
+		'&le;', '&ge;', '&sub;', '&sup;', '&nsub;', '&sube;', '&supe;', '&oplus;', '&otimes;', '&perp;', '&sdot;'
+	];
+
+
+	// Remove some buttons provided by the standard plugins, which are
+	// not needed in the Standard(s) toolbar.
+	config.removeButtons = 'Subscript,Superscript,Styles,Font';
+
+	// Set the most common block elements.
+	config.format_tags = 'p;h1;h2;h3;pre';
+
+  config.coreStyles_bold = {
+      element: 'strong',
+      attributes: { 'style': 'font-weight: bold;' },
+      overrides: 'strong'
+  };
+
+	// Simplify the dialog windows.
+	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+  config.contentsCss = '/vendor/ckeditor/fonts.css';
+
+   // config.font_names = config.font_names.replaceAll('cursive', 'sans-serif');
+   config.font_names = 'Arial/Arial, Helvetica, sans-serif;Times New Roman/Times New Roman, Times, serif;Raleway/raleway, Trebuchet MS, Avenir, Segoe UI, sans‑serif'
+
+  // Make the images inserted into the ckeditors responsive
+  // Change the img src parameter to an absolute path
+  // Make tables responsive
+  CKEDITOR.on('instanceReady', function (ev) {
+    ev.editor.dataProcessor.htmlFilter.addRules( {
+        elements : {
+            table: function( el ) {
+              if ( !el.attributes.style ) {
+                el.attributes.style="max-width: 100%";
+              } else {
+								if ( !el.attributes.style.includes('max-width') ) {
+                  const pattern=/width:\s*(\d+)px/;
+                  el.attributes.style = el.attributes.style.replace(pattern, 'width:100%; max-width:$1px');
+                }
+              }
+            },
+            img: function( el ) {
+                if ( el.attributes.src.charAt(0) == '/' ) {
+                  el.attributes.src = window.location.protocol + '//' + window.location.hostname + el.attributes.src;
+                }
+                if ( !el.attributes.style ) {
+                  el.attributes.style = "max-width: 100%";
+								}
+								if ( !el.attributes.style.includes('max-width') ) {
+                  el.attributes.style += "max-width: 100%";
+                }
+            },
+
+            ul: function( el ) {
+              el.addClass("browser-default");
+            },
+
+        }
+    });
+
+    ev.editor.on("beforeCommandExec", function(event) {
+  		// Show the paste dialog for the paste buttons and right-click paste
+  		if (event.data.name == "paste") {
+  			event.editor._.forcePasteDialog = true;
+  		}
+  		// Don't show the paste dialog for Ctrl+Shift+V
+  		if (event.data.name == "pastetext" && event.data.commandData.from == "keystrokeHandler") {
+  			event.cancel();
+  		}
+  	})
+  });
+
+	CKEDITOR.on('dialogDefinition', function (e) {
+		var dialogDefinition = e.data.definition;
+		var dialog = e.data.definition.dialog;
+		dialog.on('show', function () {
+			$('.cke_dialog_ui_input_text').addClass('browser-default');
+			$('.cke_dialog_ui_input_select').addClass('browser-default');
+		});
+	});
+};
+
+                  CKEDITOR.replace( 'editor1' );
+                </script>
+        </body>
+</html>
